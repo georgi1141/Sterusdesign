@@ -1,22 +1,30 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home"
+import Home from "./components/Home";
 import AboutUs from "./components/AboutUs";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
+
+import './App.css'
+
 
 function App() {
-  return (
-    <>
-      <Navbar />
-        <Routes> 
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<AboutUs/>} />
-        </Routes>
+ 
 
-      <Footer />
-    </>
-  );
+    return (
+        <div className="site-container">
+
+            <Navbar/>
+
+            <Routes>
+                <Route path="/" element={<Home/>}></Route>
+                <Route path="/about" element={<AboutUs/>}></Route>
+            </Routes>
+
+            <Footer/>
+    
+      </div>
+        
+    );
 }
 
 export default App;

@@ -1,0 +1,11 @@
+.menu{
+    display: flex;
+    min-width: 0;
+    flex: auto;
+
+}
+.menu *{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
