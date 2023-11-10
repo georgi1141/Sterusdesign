@@ -1,7 +1,6 @@
 .menu{
     display: flex;
     min-width: 0;
-    flex: auto;
 
 }
 .menu *{
