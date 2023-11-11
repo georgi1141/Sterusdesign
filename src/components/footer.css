@@ -3,7 +3,7 @@ footer{
     justify-content: center;
     align-items: center;
     width: 100%;
-    color: white;
+    color: #ced4da;
     padding: 0.7em 0;
     background-color: #28323C;
 }
@@ -11,5 +11,5 @@ footer{
 .github{
     margin-left: 0.5em;
     text-decoration: none;
-    color: rgb(110, 187, 255);
+    color: #74c0fc;
 }
