@@ -12,10 +12,7 @@ import Profile from "./components/content/Profile";
 
 function App() {
 
-  const userHandler = ()=>{
-    const user = localStorage.getItem('user')
-    return user
-  }
+ 
   return (
     <div className="site-container">
       <Navbar />

@@ -19,5 +19,12 @@
     width: 10em;
     height: auto;
     border-radius: 10px;
+    
+    transition: transform 0.5s ease-in-out;
+    
 }
+
+.site-logo:hover {
+    transform: scale(0.95);
+  }
 

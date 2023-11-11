@@ -15,6 +15,33 @@ function Navbar() {
     }
   };
 
+    // implement logic based on User later on when contextAPI is defined
+      
+  let user
+  const userHandler = ()=>{
+     user = true
+    if (user === false){
+      return [
+        { label: "HOME", key: "/" },
+        { label: "PROJECTS", key: "/projects" },
+        { label: "CONTACTS", key: "/contacts" },
+        { label: "ABOUT US", key: "/about" },
+        { label: "PROFILE", key: "/profile" },
+      { label: "LOGOUT", danger: true, key: "signout" }] 
+    }else{
+      return   [
+        { label: "HOME", key: "/" },
+        { label: "PROJECTS", key: "/projects" },
+        { label: "CONTACTS", key: "/contacts" },
+        { label: "ABOUT US", key: "/about" },
+        { label: "LOGIN", key: "/login" },
+      { label: "REGISTER", key: "/register" }] 
+
+
+    }
+  }
+  
+
   return (
     <nav className="navbar">
       <div className="site-logo">
@@ -27,16 +54,7 @@ function Navbar() {
           clickHandler(key);
         }}
         className="menu"
-        items={[
-          { label: "HOME", key: "/" },
-          { label: "PROJECTS", key: "/projects" },
-          { label: "CONTACTS", key: "/contacts" },
-          { label: "ABOUT US", key: "/about" },
-          { label: "LOGIN", key: "/login" },
-          { label: "REGISTER", key: "/register" },
-          { label: "PROFILE", key: "/profile" },
-          { label: "LOGOUT", danger: true, key: "signout" },
-        ]}
+        items={userHandler()}
       ></Menu>
     </nav>
   );
