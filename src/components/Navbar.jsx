@@ -1,22 +1,45 @@
 import { Menu } from "antd"
 import  './navbar.css'
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import sterus1 from "../assets/svg/sterus1.svg";
+
 
 
 function Navbar() {
 
+    const navigate = useNavigate()
+
+    const clickHandler = (key)=>{
+        if (key ==="signout"){
+
+            // implement SIGN-OUT later
+
+        }else{
+            navigate(key)
+            
+        }
+
+
+    }
+
   return (
-   <>
-     <Menu className='menu' >
-    <Menu.Item><Link to="/">Home</Link></Menu.Item>
-    <Menu.Item><Link to="/projects">Projects</Link></Menu.Item>
-    <Menu.Item><Link to="/contct">Contact Us</Link></Menu.Item>
-    <Menu.Item><Link to="/about">About Us</Link></Menu.Item>
-    <Menu.Item><Link to="/login">Login</Link></Menu.Item>
-    <Menu.Item><Link to="/register">Register</Link></Menu.Item>
-    <Menu.Item danger="true" ><Link to="/register">Logout</Link></Menu.Item>
+   <nav className="navbar">
+   <div className="site-logo" >
+    
+    <Link to="/"><img className="site-logo" src={sterus1} alt="site-logo"  /></Link>
+   </div>
+     <Menu onClick={({key})=>{clickHandler(key)}} className='menu' items={[
+        {label:"HOME",key:"/"},
+        {label:"PROJECTS",key:"/projects"},
+        {label:"CONTACTS",key:"/contacts"},
+        {label:"ABOUT US",key:"/about"},
+        {label:"LOGIN",key:"/login"},
+        {label:"REGISTER",key:"/register"},
+        {label:"PROFILE",key:"/profile"},
+        {label:"LOGOUT",danger:true,key:"signout"},
+     ]}>
       </Menu>
-   </>
+   </nav>
   )
 }
 
