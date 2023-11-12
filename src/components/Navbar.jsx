@@ -1,6 +1,6 @@
 import { Menu } from "antd";
 import "./navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import sterus1 from "../assets/svg/sterus1.svg";
 
 function Navbar() {
@@ -30,16 +30,18 @@ function Navbar() {
       { label: "LOGOUT", danger: true, key: "signout" }] 
     }else{
       return   [
-        { label: "HOME", key: "/" },
+        { label: "HOME", key: "/"},
         { label: "PROJECTS", key: "/projects" },
         { label: "CONTACTS", key: "/contacts" },
         { label: "ABOUT US", key: "/about" },
         { label: "LOGIN", key: "/login" },
       { label: "REGISTER", key: "/register" }] 
-
-
     }
   }
+
+  // Get  selected key from browserAPI to show the correct active root highlight on the Navbar.
+  const selectedKey  = useLocation()
+  
   
 
   return (
@@ -50,6 +52,7 @@ function Navbar() {
         </Link>
       </div>
       <Menu
+      selectedKeys={selectedKey.pathname}
         onClick={({ key }) => {
           clickHandler(key);
         }}
