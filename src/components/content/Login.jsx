@@ -2,19 +2,34 @@ import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./login.css";
 import { Link } from "react-router-dom";
+import { login } from "../../services/userService";
+import { ToastContainer, toast } from "react-toastify";
 import { useGlobalContext } from "../global/GlobalAppContext";
 
-const onFinish = (values) => {
-  console.log("Success:", values);
-};
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
+
 
 function Login() {
 
+const { user, setUser } = useGlobalContext();
+
+const onFinish = async ({ email, password }) => {
+
+  try {
+    const res = await login(email, password);
+        if (res.code == 403) {
+        toast.warn(res.message);
+        return;
+        }
+        setUser(res)
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+
   return (
     <div className="login-page">
+      <ToastContainer position="top-center" />
       <div className="welcome-content">
         <h2>Welcome back </h2>
         <p className="login-text">
@@ -41,7 +56,6 @@ function Login() {
               remember: true,
             }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
             autoComplete="off"
             layout="vertical"
           >

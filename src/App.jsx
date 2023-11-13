@@ -10,6 +10,7 @@ import Login from "./components/content/Login";
 import Register from "./components/content/Register";
 import Profile from "./components/content/Profile";
 import Error from "./components/content/Error";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
