@@ -8,6 +8,7 @@
     min-width: 0;
     color: #d0ebff;
     background-color: rgba(0, 0, 0, 0.001);
+    
   
 
 }
@@ -25,6 +26,8 @@
 
 .menu *:hover{
     color: #d0ebff;
+    transform: scale(1.04);
+    transition: transform 0.4s ease-in-out;
 }
 .ant-menu > .ant-menu-item-active {
     color: #d0ebff !important;
