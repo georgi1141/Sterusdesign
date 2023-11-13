@@ -29,7 +29,16 @@ function Register() {
   };
 
   return (
-    <div className="form-wrapper">
+    <div className="login-page">
+      <div className="welcome-content">
+        <h2>Get started now</h2>
+        <p className="login-text">
+        Are you ready to embark on a journey to find your dream car?<br />
+        All you need to do is register on our platform. It's quick, easy, and opens up a world of possibilities for you to explore.
+        </p>
+      </div>
+      <div className="form-container">
+      <div className="form-wrapper">
       <h2>Register</h2>
       <Form
         name="basic"
@@ -130,6 +139,8 @@ function Register() {
           Login!
         </Link>
       </p>
+    </div>
+      </div>
     </div>
   );
 }
