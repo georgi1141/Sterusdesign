@@ -18,7 +18,7 @@ function Login() {
         <p className="login-text">
           Sign back in to your account to explore the world of premium vehicles,
           exclusive offers, and a seamless car-buying experience tailored to
-          your preferences. Your dream car awaits!{" "}
+          your preferences. Your dream car awaits!
         </p>
       </div>
       <div className="form-container">
