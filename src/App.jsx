@@ -1,16 +1,16 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/content/Home";
-import AboutUs from "./components/content/AboutUs";
+import Home from "./components/content/Home/Home";
+import AboutUs from "./components/content/AboutUs/AboutUs";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Projects from "./components/content/Projects";
-import Contacts from "./components/content/Contacts";
-import Login from "./components/content/Login";
-import Register from "./components/content/Register";
+import Projects from "./components/content/Projects/Projects";
+import Contacts from "./components/content/Contacts/Contacts";
+import Login from "./components/content/Login/Login";
+import Register from "./components/content/Register/Register";
 import Profile from "./components/content/Profile";
-import Error from "./components/content/Error";
 import 'react-toastify/dist/ReactToastify.css';
+import Error from "./components/content/Error/Error";
 
 function App() {
 

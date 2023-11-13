@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import "./login.css";
+import "./loginAndRegister.css";
 import { Link ,useNavigate} from "react-router-dom";
-import { login } from "../../services/userService";
+import { login } from "../../../services/userService";
 import { ToastContainer, toast } from "react-toastify";
-import { useGlobalContext } from "../global/GlobalAppContext";
+import { useGlobalContext } from "../../globalContext/GlobalAppContext";
 
 
 

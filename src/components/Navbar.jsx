@@ -2,7 +2,7 @@ import { Menu } from "antd";
 import "./navbar.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import sterus from "../assets/sterus.png"
-import { useGlobalContext } from "./global/GlobalAppContext";
+import { useGlobalContext } from "./globalContext/GlobalAppContext";
 import { useEffect } from "react";
 
 
@@ -10,15 +10,6 @@ import { useEffect } from "react";
 function Navbar() {
 
   const {user,setUser} = useGlobalContext()
-
-
-  useEffect(()=>{
-
-    setUser(true)
-    console.log(user)
-
-  },[])
-
 
 
   const navigate = useNavigate();
@@ -35,6 +26,7 @@ function Navbar() {
     // implement logic based on User later on when contextAPI is defined
       
   const userHandler = ()=>{
+    console.log(user)
     if (user){
       return [
         { label: "HOME", key: "/" },

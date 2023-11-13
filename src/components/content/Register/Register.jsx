@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
-import "./login.css";
+import "../Login/loginAndRegister.css";
 import { Link } from "react-router-dom";
 
 function Register() {

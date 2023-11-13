@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import {BrowserRouter} from "react-router-dom"
 import "./main.css"
-import GlobalAppContext from './components/global/GlobalAppContext.jsx'
+import GlobalAppContext from './components/globalContext/GlobalAppContext.jsx'
 
 
 
