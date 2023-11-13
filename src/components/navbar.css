@@ -6,8 +6,9 @@
 .menu{
     display: flex;
     min-width: 0;
-    color: #e7f5ff;
-    background-color: rgba(0, 0, 0, 0.01);
+    color: #d0ebff;
+    background-color: rgba(0, 0, 0, 0.001);
+  
 
 }
 .menu *{
@@ -16,12 +17,18 @@
     flex-wrap: wrap;
 }
 
+.ant-menu-item-selected{
+    background-color: rgba(88, 88, 171, 0.3) !important;
+    color: #9dd1f8 !important;
+}
+
 
 .menu *:hover{
-    color: #339af0;
+    color: #d0ebff;
 }
 .ant-menu > .ant-menu-item-active {
-    color: #339af0 !important;
+    color: #d0ebff !important;
+    background-color: rgba(88, 88, 171, 0.2) !important;
   }
 
 .site-logo {
