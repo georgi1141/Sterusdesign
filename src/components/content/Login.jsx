@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { login } from "../../services/userService";
 import { ToastContainer, toast } from "react-toastify";
 import { useGlobalContext } from "../global/GlobalAppContext";
@@ -9,6 +9,8 @@ import { useGlobalContext } from "../global/GlobalAppContext";
 
 
 function Login() {
+
+    const navigate = useNavigate()
 
 const { user, setUser } = useGlobalContext();
 
@@ -21,6 +23,7 @@ const onFinish = async ({ email, password }) => {
         return;
         }
         setUser(res)
+        navigate('/')
   } catch (error) {
     toast.error(error.message);
   }
