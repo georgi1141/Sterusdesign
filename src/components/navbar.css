@@ -6,7 +6,8 @@
 .menu{
     display: flex;
     min-width: 0;
-    background-color: #F5F5F5;
+    color: #e7f5ff;
+    background-color: rgba(0, 0, 0, 0.01);
 
 }
 .menu *{
@@ -15,17 +16,26 @@
     flex-wrap: wrap;
 }
 
-.site-logo{
+
+.menu *:hover{
+    color: #339af0;
+}
+.ant-menu > .ant-menu-item-active {
+    color: #339af0 !important;
+  }
+
+.site-logo {
+    font-size: large;
     margin: 0.2em;
     width: 10em;
-    height: auto;
     border-radius: 10px;
-    
-    transition: transform 0.5s ease-in-out;
-    
+    background-color: rgba(0, 0, 0, 0.01);
+    transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .site-logo:hover {
     transform: scale(0.95);
-  }
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
 

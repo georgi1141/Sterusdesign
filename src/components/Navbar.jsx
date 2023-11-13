@@ -2,6 +2,7 @@ import { Menu } from "antd";
 import "./navbar.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import sterus1 from "../assets/svg/sterus1.svg";
+import sterus from "../assets/sterus.png"
 
 function Navbar() {
   const navigate = useNavigate();
@@ -42,13 +43,12 @@ function Navbar() {
   // Get  selected key from browserAPI to show the correct active root highlight on the Navbar.
   const selectedKey  = useLocation()
   
-  
 
   return (
     <nav className="navbar">
-      <div className="site-logo">
+      <div>
         <Link to="/">
-          <img className="site-logo" src={sterus1} alt="site-logo" />
+          <img className="site-logo svg" src={sterus} alt="site-logo" />
         </Link>
       </div>
       <Menu

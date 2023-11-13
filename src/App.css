@@ -1,7 +1,13 @@
 .site-container{
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
+    background: linear-gradient(rgba(44, 43, 43, 0.8), rgba(0, 0, 0, 0.9)), url("./assets/images/IMG_7965.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    
 }
 
 .main-content{
@@ -10,3 +16,4 @@
     justify-content: center;
     align-items: center;
 }
+

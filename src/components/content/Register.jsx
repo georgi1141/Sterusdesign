@@ -34,13 +34,13 @@ function Register() {
       <Form
         name="basic"
         labelCol={{
-          span: 10,
+          span: 12,
         }}
         wrapperCol={{
-          span: 16,
+          span: 30,
         }}
         style={{
-          maxWidth: 600,
+          width: 400,
         }}
         initialValues={{
           remember: true,
@@ -48,6 +48,7 @@ function Register() {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
+        layout="vertical"
       >
         <Form.Item
           label="Email"
