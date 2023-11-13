@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import "./login.css";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../global/GlobalAppContext";
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -11,6 +12,7 @@ const onFinishFailed = (errorInfo) => {
 };
 
 function Login() {
+
   return (
     <div className="login-page">
       <div className="welcome-content">

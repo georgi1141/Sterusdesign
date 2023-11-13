@@ -1,10 +1,13 @@
 import { Menu } from "antd";
 import "./navbar.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import sterus1 from "../assets/svg/sterus1.svg";
 import sterus from "../assets/sterus.png"
 
 function Navbar() {
+
+
+  
+
   const navigate = useNavigate();
 
   const clickHandler = (key) => {
