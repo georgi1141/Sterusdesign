@@ -1,50 +1,68 @@
 .landing-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
     width: 80%;
-    height: fit-content;
     box-shadow: 0 6px 40px rgba(103, 98, 98, 0.251); 
     background-color: rgba(88, 88, 171, 0.1);
     border-radius: 20px;
-    transition: background-color 0.3s ease-in-out; 
     color: #d0ebff;
+    margin: 5em;
+  
   }
 
-  .hero {
-    padding: 80px 20px;
-    text-align: center;
+  .hero{
+    display: flex;
+    flex: 0 0 50%;
+    margin: 3em;
   }
-  
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+
+  h1{
+    text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 600;
+    margin: 0;
   }
-  
-  .hero-title {
-    font-size: 3em;
-    margin-bottom: 1em;
+  .unique{
+    color:#74c0fc;
+    border-bottom:2px solid #74c0fc ;
   }
-  
-  .hero-subtitle {
+  p{
     font-size: 1.2em;
-    margin-bottom: 2em;
-    
+    line-height: 1.6em;
+    letter-spacing: 0.1em;
   }
-  
-  .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
+
+  .hero-right{
+    flex: 0 0 50%;
+  }
+
+  .cta-button{
     background-color: rgba(88, 88, 171, 0.3);
     color: #d0ebff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 1em;
+    margin: 3em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    animation: moveInOut 2s infinite ease-in-out;
   }
   
-  .cta-button:hover {
-    background-color: rgba(88, 88, 171, 0.5);
-    color: #d0ebff;
+  .cta-button:hover{
+    background-color: rgba(88, 88, 171, 0.6);
   }
 
+  .link-btn{
+    display: flex;
+    justify-content: center;
+  }
+ 
+
+  @keyframes moveInOut {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.07);
+    }
+  }
 

@@ -3,7 +3,7 @@ import "./navbar.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import sterus from "../assets/sterus.png"
 import { useGlobalContext } from "./globalContext/GlobalAppContext";
-import { useEffect } from "react";
+
 
 
 
@@ -57,6 +57,8 @@ function Navbar() {
           <img className="site-logo svg" src={sterus} alt="site-logo" />
         </Link>
       </div>
+      <div className="nav-sub-container">
+      {user && <div className="user">Hello, {user.username}!</div>} 
       <Menu
       selectedKeys={selectedKey.pathname}
         onClick={({ key }) => {
@@ -65,6 +67,7 @@ function Navbar() {
         className="menu"
         items={userHandler()}
       ></Menu>
+      </div>
     </nav>
   );
 }
