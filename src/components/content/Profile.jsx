@@ -6,7 +6,7 @@ import { useGlobalContext } from '../globalContext/GlobalAppContext'
 function Profile() {
 
   const {user} = useGlobalContext()
-  console.log(user)
+  
   return (
 
     <div>

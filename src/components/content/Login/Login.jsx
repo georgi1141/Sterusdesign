@@ -25,6 +25,7 @@ const onFinish = async ({ email, password }) => {
         setUser(newUser)
         navigate('/')
   } catch (error) {
+    console.log(error)
     toast.error(error.message);
   }
 };

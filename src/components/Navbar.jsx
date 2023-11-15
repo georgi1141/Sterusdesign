@@ -3,27 +3,27 @@ import "./navbar.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import sterus from "../assets/sterus.png"
 import { useGlobalContext } from "./globalContext/GlobalAppContext";
+import { useEffect } from "react";
+
+
 
 
 
 
 function Navbar() {
-
-  const {user,setUser} = useGlobalContext()
-
-
   const navigate = useNavigate();
+  const {user,setUser} = useGlobalContext()
 
   const clickHandler = (key) => {
     if (key === "signout") {
       setUser(false)
+      localStorage.clear()
       navigate('/')
     } else {
       navigate(key);
     }
   };
 
-    // implement logic based on User later on when contextAPI is defined
       
   const userHandler = ()=>{
     if (user){

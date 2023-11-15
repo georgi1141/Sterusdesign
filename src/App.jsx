@@ -11,8 +11,20 @@ import Register from "./components/content/Register/Register";
 import Profile from "./components/content/Profile";
 import 'react-toastify/dist/ReactToastify.css';
 import Error from "./components/content/Error/Error";
+import { useEffect } from "react";
+import { useGlobalContext } from "./components/globalContext/GlobalAppContext";
 
 function App() {
+
+  // Check if there is user in localStorage, in case the user refreshes the page or for some reason reloads, and when he comes back stais logged in  (!!not sure if that is a correct approach!!)
+  
+  const {setUser} =useGlobalContext()
+  useEffect(()=>{
+    const localStorageUser = localStorage.getItem('user')
+    if(localStorageUser){
+      setUser(JSON.parse(localStorageUser).user)
+    }
+  },[])
 
  
   return (
