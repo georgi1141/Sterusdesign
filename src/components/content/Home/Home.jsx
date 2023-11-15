@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../globalContext/GlobalAppContext";
+import sewing from "../../../assets/images/sewing.jpg"
 
 function Home() {
 
@@ -32,7 +33,9 @@ function Home() {
           </section>
 
           <section className="hero-right">
-            <div>Some content</div>
+            
+                <img src={sewing} alt="man sewing" className="img"  />
+            
           </section>
         </>
       )}

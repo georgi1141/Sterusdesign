@@ -17,12 +17,12 @@ const { user, setUser } = useGlobalContext();
 const onFinish = async ({ email, password }) => {
 
   try {
-    const res = await login(email, password);
-        if (res.code == 403) {
-        toast.warn(res.message);
+    const newUser = await login(email, password);
+        if (newUser.code == 403) {
+        toast.warn(newUser.message);
         return;
         }
-        setUser(res)
+        setUser(newUser)
         navigate('/')
   } catch (error) {
     toast.error(error.message);

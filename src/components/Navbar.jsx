@@ -17,7 +17,7 @@ function Navbar() {
   const clickHandler = (key) => {
     if (key === "signout") {
       setUser(false)
-      console.log("logout clicked")
+      navigate('/')
     } else {
       navigate(key);
     }
@@ -26,7 +26,6 @@ function Navbar() {
     // implement logic based on User later on when contextAPI is defined
       
   const userHandler = ()=>{
-    console.log(user)
     if (user){
       return [
         { label: "HOME", key: "/" },

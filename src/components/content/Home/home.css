@@ -33,9 +33,7 @@
     letter-spacing: 0.1em;
   }
 
-  .hero-right{
-    flex: 0 0 50%;
-  }
+  
 
   .cta-button{
     background-color: rgba(88, 88, 171, 0.3);
@@ -65,5 +63,28 @@
     50% {
       transform: scale(1.07);
     }
+  }
+
+  .hero-right{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-self: center;
+    flex: 0 0 50%;
+  }
+
+  .img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    opacity: 0.6;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .img:hover {
+    transform: scale(1.05); 
+    filter: brightness(1.2); 
+    opacity: 1;
   }
 
