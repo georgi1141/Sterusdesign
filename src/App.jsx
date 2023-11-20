@@ -18,7 +18,7 @@ function App() {
 
   // Check if there is user in localStorage, in case the user refreshes the page or for some reason reloads, and when he comes back stais logged in  (!!not sure if that is a correct approach!!)
   
-  const {setUser} =useGlobalContext()
+  const {user,setUser} =useGlobalContext()
   useEffect(()=>{
     const localStorageUser = localStorage.getItem('user')
     if(localStorageUser){
