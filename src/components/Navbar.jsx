@@ -33,6 +33,7 @@ function Navbar() {
       return [
         { label: "HOME", key: "/" },
         { label: "PROJECTS", key: "/projects" },
+        { label: "ADD PROJECT", key: "/add-project" },
         { label: "CONTACTS", key: "/contacts" },
         { label: "ABOUT US", key: "/about" },
         { label: "LOGOUT", danger: true, key: "signout" },

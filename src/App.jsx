@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Error from "./components/content/Error/Error";
 import { useEffect } from "react";
 import { useGlobalContext } from "./components/globalContext/GlobalAppContext";
+import AddNewProject from "./components/content/AddNewProject/AddNewProject";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   
   const {user,setUser} =useGlobalContext()
   useEffect(()=>{
+
     const localStorageUser = localStorage.getItem('user')
     if(localStorageUser){
       setUser(JSON.parse(localStorageUser).user)
@@ -37,6 +39,7 @@ function App() {
           <Route path="/about" element={<AboutUs />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
+          <Route path="/add-project" element={<AddNewProject />}></Route>
           <Route path="/*" element={<Error />}></Route>
         </Routes>
       </main>
