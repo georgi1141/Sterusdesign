@@ -35,7 +35,6 @@ function Navbar() {
         { label: "PROJECTS", key: "/projects" },
         { label: "CONTACTS", key: "/contacts" },
         { label: "ABOUT US", key: "/about" },
-        { label: "PROFILE", key: "/profile" },
         { label: "LOGOUT", danger: true, key: "signout" },
       ];
     } else {

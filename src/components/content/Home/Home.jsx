@@ -11,7 +11,10 @@ function Home() {
   return (
     <div className="landing-container">
       {user ? (
-        <>Complete page if there is user logged in!</>
+        <>
+        
+        Complete page if there is user logged in!
+        </>
       ) : (
         <>
           <section className="hero">
