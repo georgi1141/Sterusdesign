@@ -16,7 +16,7 @@ function Projects() {
 
   return <>
   {projects? 
-  projects.map(project=><>{project.projectName}</>)
+  projects.map(project=><div key={project._id}>{project.projectName}</div>)
   :
   ' No projects yet!'}
   </>
