@@ -13,6 +13,7 @@ import Error from "./components/content/Error/Error";
 import { useEffect } from "react";
 import { useGlobalContext } from "./components/globalContext/GlobalAppContext";
 import AddNewProject from "./components/content/AddNewProject/AddNewProject";
+import ProjectDetails from "./components/content/ProjectDetails.jsx/ProjectDetails";
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
+          <Route path="/projects/:projectId" element={<ProjectDetails />}></Route>
           <Route path="/contacts" element={<Contacts />}></Route>
           <Route path="/about" element={<AboutUs />}></Route>
           <Route path="/login" element={<Login />}></Route>

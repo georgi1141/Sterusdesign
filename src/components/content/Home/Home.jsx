@@ -17,6 +17,7 @@ function Home() {
                         <div className="welcome-container">
                             <h3> Hello {user.username}, what's next?</h3>
                             <ul>
+                            <li> Browse our community projeces: <Link to={'/projects'}><button>Projects</button></Link></li>
                                 <li> Browse our community projeces: <button onClick={() => { navigate('/projects') }}>Projects</button></li>
                                 <li>Share your project with the community : <button onClick={() => { navigate('/add-project') }}>Share project</button></li>
                             </ul>

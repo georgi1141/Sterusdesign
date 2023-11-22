@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { getAll } from '../../../services/projectService'
+import Project from '../Project/Project';
+import "./projects.css"
 
 function Projects() {
 
 
-  const [projects,setProjects] = useState()
+  const [projects,setProjects] = useState([])
 
   useEffect(()=>{
 
@@ -14,12 +16,16 @@ function Projects() {
 
   },[])
 
-  return <>
-  {projects? 
-  projects.map(project=><div key={project._id}>{project.projectName}</div>)
-  :
-  ' No projects yet!'}
-  </>
+  console.log(projects)
+  
+  return <div className='container'>
+   {projects.length<0?
+   <h2>No projects yet!</h2>
+   :
+   projects.map(data=> <Project key={data.projectName} {...data}/>)
+   }
+
+  </div>
   
 }
 
