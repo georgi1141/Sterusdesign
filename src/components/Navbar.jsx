@@ -34,6 +34,7 @@ function Navbar() {
         { label: "HOME", key: "/" },
         { label: "PROJECTS", key: "/projects" },
         { label: "ADD PROJECT", key: "/add-project" },
+        { label: "MY PROJECTS", key: "/my-projects" },
         { label: "LOGOUT", danger: true, key: "signout" },
       ];
     } else {

@@ -1,11 +1,9 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/content/Home/Home";
-import AboutUs from "./components/content/AboutUs/AboutUs";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Projects from "./components/content/Projects/Projects";
-import Contacts from "./components/content/Contacts/Contacts";
 import Login from "./components/content/Login/Login";
 import Register from "./components/content/Register/Register";
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,6 +12,7 @@ import { useEffect } from "react";
 import { useGlobalContext } from "./components/globalContext/GlobalAppContext";
 import AddNewProject from "./components/content/AddNewProject/AddNewProject";
 import ProjectDetails from "./components/content/ProjectDetails.jsx/ProjectDetails";
+import MyProjects from "./components/content/MyProjects/MyProjects";
 
 function App() {
 
@@ -37,11 +36,10 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
           <Route path="/projects/:projectId" element={<ProjectDetails />}></Route>
-          <Route path="/contacts" element={<Contacts />}></Route>
-          <Route path="/about" element={<AboutUs />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/add-project" element={<AddNewProject />}></Route>
+          <Route path="/my-projects" element={<MyProjects />}></Route>
           <Route path="/*" element={<Error />}></Route>
         </Routes>
       </main>
