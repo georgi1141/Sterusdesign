@@ -93,6 +93,38 @@
   .home-container{
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
+  .welcome-container{
+    border-right: 1px solid #74c0fc;
+
+  }
+
+
+.welcome-container h3{
+  font-size: 2.5em;
+  margin: 1em;
+
+}
+
+.projects-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0em 2em 0;
+}
+
+
+.projects-container h4{
+  font-size: 1.5em;
+  margin: 1em;
+  
+}
+
+.projects-ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}

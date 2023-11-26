@@ -16,7 +16,6 @@ function Projects() {
 
   },[])
 
-  console.log(projects)
   
   return <div className='container'>
    {projects.length<0?

@@ -9,12 +9,13 @@ function Project({
   return (
     <Card
       title={data.projectName}
-      style={{
-        width: 240,
-        textAlign: 'center',
-      }}
+      className='card'
       cover={
-        <div style={{ width: '100%', height: 150, overflow: 'hidden', textAlign: 'center' }}>
+        <div style={{ 
+          width: '100%', 
+          height: 150, overflow: 'hidden',
+           textAlign: 'center' 
+           }}>
           <img
           className='img-card'
             alt="example"

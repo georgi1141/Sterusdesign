@@ -1,24 +1,16 @@
 const baseUrl = "http://localhost:3030/data/projects";
 
-
-export const getAll = async ()=>{
-
+export const getAll = async () => {
     try {
+        const res = await fetch(baseUrl);
 
-    const res = await fetch(baseUrl)
+        if (!res.ok) {
+            throw new Error("Internal server error!");
+        }
 
-    if (!res.ok){
-        throw new Error('Internal server error!')
-    }
-
-    const data = res.json()
-    return data
-
-        
+        const data = res.json();
+        return data;
     } catch (error) {
-        return error
+        return error;
     }
-
-
-
-}
+};
