@@ -27,7 +27,7 @@ function Home() {
                     <div className="home-container">
                         <div className="welcome-container">
                             <h3 > Hello {user.username}, what's next?</h3>
-                            <ul>
+                            <ul className="ul-container">
                             <li> Browse our community projeces: <Link to={'/projects'}><button>Projects</button></Link></li>
                                 <li>Share your project with the community : <button onClick={() => { navigate('/add-project') }}>Share project</button></li>
                             </ul>
@@ -40,8 +40,6 @@ function Home() {
 
                         </div>
                     </div>
-                    
-
                 </>
             ) : (
                 <>
