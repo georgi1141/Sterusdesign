@@ -24,7 +24,6 @@ function Home() {
         .catch(err=>console.log('here',err))
     },[])
 
-    console.log(projects)
     return (
         <div className="landing-container">
             {user ? (

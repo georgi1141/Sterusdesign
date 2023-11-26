@@ -15,6 +15,28 @@ export const getAll = async () => {
     }
 };
 
+export const getOne = async (projectId) => {
+
+    try {
+        const res = await fetch(`${baseUrl}/${projectId}`);
+
+        if (!res.ok) {
+            throw new Error("Internal server error!");
+        }
+
+        const data = res.json();
+        return data;
+    } catch (error) {
+        return error;
+    }
+
+    
+}
+
+export const getOwn = () =>{
+    
+}
+
 
 export const addProject = async (data,token)=>{
 
