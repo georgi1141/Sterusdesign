@@ -54,7 +54,7 @@ const AddNewProject = () => {
         <Form.Item label="Project Name" name="projectName" rules={[{ required: true, message: 'Please enter the project name!' }]}>
           <Input />
         </Form.Item>
-        <Form.Item label="TextArea" name="description" rules={[{ required: true, message: 'Please enter the project description!' }]}>
+        <Form.Item label="Description" name="description" rules={[{ required: true, message: 'Please enter the project description!' }]}>
           <TextArea rows={10} />
         </Form.Item>
         <Form.Item label="Image Url" name="imageUrl" rules={[{ required: true, message: 'Please enter the Image Url!' }]}>
