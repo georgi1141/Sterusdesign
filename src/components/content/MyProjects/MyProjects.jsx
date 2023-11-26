@@ -18,7 +18,6 @@ function MyProjects() {
 
   },[])
 
-  console.log(ownProjects)
   return (
     <>
     {ownProjects.length<1 ? 
