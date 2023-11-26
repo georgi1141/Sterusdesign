@@ -1,14 +1,16 @@
-import React, { useEffect, useReducer, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getOne } from '../../../services/projectService'
+import React, { useEffect, useReducer } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import { deleteOne, getOne } from '../../../services/projectService'
 import styles from './projectDetails.module.css'
 import { useGlobalContext } from '../../globalContext/GlobalAppContext'
+
 
 
 function ProjectDetails() {
 
     const { projectId } = useParams('projectId')
     const { user } = useGlobalContext()
+    const navigate = useNavigate()
 
     const ACTION_KEYS = {
         EDIT: 'EDIT',
@@ -25,8 +27,21 @@ function ProjectDetails() {
             case ACTION_KEYS.POPULATE:
                 return { ...state, project: action.payload.res }
             case ACTION_KEYS.DELETE :
-                 console.log('delete clicked') 
-                  return {...state}
+                
+                    deleteOne(action.payload.projectId,action.payload.token)
+                    .then(res=> {
+                        if(res.code === 403){
+                            throw new Error(res.message)
+                        }
+                        navigate('/my-projects')
+                    })
+                    .catch(err=>{
+                        console.log(err.message)
+                        return state;
+
+                    } )
+                    
+                  return {...state,project:{}}
             case ACTION_KEYS.EDIT:
                  console.log('edit clicked')
                  return {...state}
@@ -44,7 +59,7 @@ function ProjectDetails() {
         } catch (error) {
             console.log(error)
         }
-    }, [])
+    }, [deleteOne])
     const isOwner = user?._id === state.project._ownerId
 
 
@@ -62,8 +77,16 @@ function ProjectDetails() {
                 {isOwner
                     &&
                     <div className={styles.buttons}>
-                        <button onClick={()=>{dispatch({type:ACTION_KEYS.EDIT})}}>Edit</button>
-                        <button onClick={()=>{dispatch({type:ACTION_KEYS.DELETE})}}>Delete</button>
+                        <button onClick={()=>{dispatch(
+                            {type:ACTION_KEYS.EDIT}
+                            )}}>Edit
+                        </button>
+                        <button onClick={()=>{dispatch(
+                            {type:ACTION_KEYS.DELETE,
+                            payload:{token:user?.accessToken,projectId:state.project._id
+                            }
+                            })}}>Delete
+                        </button>
                     </div>
                 }
 

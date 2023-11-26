@@ -33,7 +33,27 @@ export const getOne = async (projectId) => {
     
 }
 
-export const getOwn = () =>{
+export const deleteOne = async (projectId,accessToken) =>{
+    
+    try {
+
+        const res = await fetch(`${baseUrl}/${projectId}`,{
+            method:"DELETE",
+            headers:{
+                "content-type":"application/json",
+                "X-Authorization":accessToken
+            }
+    
+        })
+    
+        const result = res.json()
+        return result
+    
+            
+        } catch (error) {
+            return error
+            
+        }
     
 }
 
