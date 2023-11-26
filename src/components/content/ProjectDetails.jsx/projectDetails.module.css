@@ -1,0 +1,55 @@
+.cardContainer{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    height: auto;
+    box-shadow: 0 6px 40px rgba(137, 132, 132, 0.1); 
+    background-color: rgba(88, 88, 171, 0.1);
+    border-radius: 20px;
+    padding: 2em;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 60%;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments{
+    flex: 1 1 20%;
+    text-align: center;
+}
+
+.imageContainer img{
+    display: block;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.buttons{
+    display: flex;
+    gap: 1em;
+
+}
+
+.buttons button{
+    background-color: rgba(88, 88, 171, 0.3);
+    color: #d0ebff;
+    padding: 1em;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.buttons button:hover{
+    background-color: rgba(88, 88, 171, 0.6);
+}
