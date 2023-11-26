@@ -1,0 +1,46 @@
+.noProjects{
+    font-size: 2.5em;
+    font-weight: 700;
+
+    background: linear-gradient(to right, #22b8cf 0%, #1c7ed6 100%) ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent ;
+    margin: 0.2;
+    letter-spacing: 0.5px;
+}
+
+.clickable a{
+    text-decoration: none;
+    font-size: 1.2em;
+    border-bottom: 1px solid #4c9399;
+    
+    
+    background: linear-gradient(to right, #22b8cf 0%, #1c7ed6 100%) ;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent ;
+    margin: 0.2;
+    letter-spacing: 0.5px;
+
+    animation: popAnimation 2s infinite;
+    
+    
+}
+
+
+
+@keyframes popAnimation {
+    0% {
+        transform: scale(0.8) translateZ(0);
+        opacity: 0.2;
+    }
+    50% {
+        transform: scale(1.2) translateZ(50px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8) translateZ(0);
+        opacity: 0.2;
+    }
+}
