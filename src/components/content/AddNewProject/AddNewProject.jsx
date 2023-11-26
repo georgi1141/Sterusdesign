@@ -1,25 +1,42 @@
 import React from 'react';
-import { PlusOutlined } from '@ant-design/icons';
-import { Form, Input, Upload, Button } from 'antd';
+import { Form, Input, Button } from 'antd';
+import { addProject } from '../../../services/projectService';
+import { useGlobalContext } from "../../globalContext/GlobalAppContext";
+import { ToastContainer, toast } from "react-toastify";
+import "./addNewProject.css"
+import { useNavigate } from 'react-router-dom';
 
 const { TextArea } = Input;
 
-const normFile = (e) => {
-  if (Array.isArray(e)) {
-    return e;
-  }
-  return e?.fileList;
-};
 
+ 
 const AddNewProject = () => {
+
+  const { user } = useGlobalContext();
+  const navigate = useNavigate()
+
+
   const onFinish = async (values) => {
-    console.log('Form values:', values);
-    // Handle form submission logic here
+    try {
+      
+      const res = await addProject(values,user.accessToken)
+      navigate('/projects')
+
+
+    } catch (error) {
+
+      toast.error(error.message)
+      
+    }
   };
 
   return (
-    <div>
+    <div className='form-container'>
+      <ToastContainer position="top-center" />
+      <h2 className='new-project-h2'>Add New Project</h2>
+    
       <Form
+      className='form'
         labelCol={{
           span: 8,
         }}
@@ -54,7 +71,8 @@ const AddNewProject = () => {
           </Button>
         </Form.Item>
       </Form>
-    </div>
+      </div>
+
   );
 };
 

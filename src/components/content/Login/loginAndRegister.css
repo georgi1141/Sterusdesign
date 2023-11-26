@@ -11,7 +11,7 @@
     height: auto;
 }
 
-.welcome-content h2, .login-text  {
+.welcome-content h2, .login-text ,h2 {
     background: linear-gradient(to right, #22b8cf 0%, #1c7ed6 100%) ;
     -webkit-background-clip: text;
     background-clip: text;
@@ -26,7 +26,7 @@
     border-bottom: 2px solid #66d9e8;
 }
 
-
+ 
 .login-text{
     margin: 2em 0 0 0;
     letter-spacing: 2.5px;

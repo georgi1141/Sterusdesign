@@ -34,16 +34,12 @@ function Navbar() {
         { label: "HOME", key: "/" },
         { label: "PROJECTS", key: "/projects" },
         { label: "ADD PROJECT", key: "/add-project" },
-        { label: "CONTACTS", key: "/contacts" },
-        { label: "ABOUT US", key: "/about" },
         { label: "LOGOUT", danger: true, key: "signout" },
       ];
     } else {
       return [
         { label: "HOME", key: "/" },
         { label: "PROJECTS", key: "/projects" },
-        { label: "CONTACTS", key: "/contacts" },
-        { label: "ABOUT US", key: "/about" },
         { label: "LOGIN", key: "/login" },
         { label: "REGISTER", key: "/register" },
       ];

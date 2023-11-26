@@ -21,7 +21,7 @@ function Projects() {
    {projects.length<0?
    <h2>No projects yet!</h2>
    :
-   projects.map(data=> <Project key={data.projectName} {...data}/>)
+   projects.map(data=> <Project key={data._id} {...data}/>)
    }
 
   </div>

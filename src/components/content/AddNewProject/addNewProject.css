@@ -1,0 +1,16 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    background-color: #e9ecef !important;
+    border-radius: 20px;
+
+}
+
+.new-project-h2{
+    font-size: 3em;
+}

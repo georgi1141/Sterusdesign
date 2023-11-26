@@ -14,14 +14,14 @@ function Home() {
     const [projects,setProjects] = useState([])
 
     useEffect(()=>{
-        
+
         getAll()
         .then(res=> {
             const data = Object.values(res)
             const lastThree = data.slice(-3)
             setProjects(lastThree)
         })
-        .catch(err=>console.log(err))
+        .catch(err=>console.log('here',err))
     },[])
 
     console.log(projects)
