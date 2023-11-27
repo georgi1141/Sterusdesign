@@ -13,6 +13,7 @@ import { useGlobalContext } from "./components/globalContext/GlobalAppContext";
 import AddNewProject from "./components/content/AddNewProject/AddNewProject";
 import ProjectDetails from "./components/content/ProjectDetails.jsx/ProjectDetails";
 import MyProjects from "./components/content/MyProjects/MyProjects";
+import UserGuard from "./components/guards/UserGuard";
 
 function App() {
 
@@ -38,8 +39,8 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetails />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
-          <Route path="/add-project" element={<AddNewProject />}></Route>
-          <Route path="/my-projects" element={<MyProjects />}></Route>
+          <Route path="/add-project" element={<UserGuard> <AddNewProject /></UserGuard>}></Route>
+          <Route path="/my-projects" element={<UserGuard><MyProjects /></UserGuard>}></Route>
           <Route path="/*" element={<Error />}></Route>
         </Routes>
       </main>
