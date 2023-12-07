@@ -37,8 +37,8 @@ function ProjectDetails() {
           });
         return { ...state, project: {} };
       case ACTION_KEYS.EDIT:
-        console.log("edit clicked");
-        return { ...state };
+        navigate(`/projects/editProject/${state.project?._id}`)
+        return state;
       default:
         return state;
     }
@@ -57,7 +57,8 @@ function ProjectDetails() {
       console.log(error);
     }
   }, []);
-  const isOwner = user?._id === state.project._ownerId;
+
+  const isOwner = user?._id === state?.project?._ownerId;
 
   return (
     <div className={styles.cardContainer}>
@@ -80,7 +81,6 @@ function ProjectDetails() {
             </button>
             <button
               onClick={() => {
-                console.log(state);
                 if (confirm(`Delete ${state.project.projectName}`) == true) {
                   dispatch({
                     type: ACTION_KEYS.DELETE,

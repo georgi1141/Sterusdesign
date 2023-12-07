@@ -14,6 +14,7 @@ import AddNewProject from "./components/content/AddNewProject/AddNewProject";
 import ProjectDetails from "./components/content/ProjectDetails.jsx/ProjectDetails";
 import MyProjects from "./components/content/MyProjects/MyProjects";
 import UserGuard from "./components/guards/UserGuard";
+import EditProject from "./components/content/EditProject/EditProject";
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/projects" element={<Projects />}></Route>
           <Route path="/projects/:projectId" element={<ProjectDetails />}></Route>
+
+          <Route path="/projects/editProject/:projectId" element={<EditProject />}></Route>
+          
           <Route path="/login" element={<Login />}></Route>
           <Route path="/register" element={<Register />}></Route>
           <Route path="/add-project" element={<UserGuard> <AddNewProject /></UserGuard>}></Route>
