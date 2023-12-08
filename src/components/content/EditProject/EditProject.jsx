@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form, Input, Button } from 'antd';
-import { addProject, getOne } from '../../../services/projectService';
+import { editProject, getOne } from '../../../services/projectService';
 import { useGlobalContext } from "../../globalContext/GlobalAppContext";
 import { ToastContainer, toast } from "react-toastify";
 import "../AddNewProject/AddNewProject.css"
@@ -13,7 +13,7 @@ const { TextArea } = Input;
 const EditProject = () => {
     
   const {projectId} = useParams('projectId') 
-  const [editedProject, setEditedProject] = useState({})
+  const [project, setProject] = useState({})
   const { user } = useGlobalContext();
   const navigate = useNavigate()
   const [form] = Form.useForm();
@@ -26,6 +26,7 @@ const EditProject = () => {
             description: res.description || '', 
             imageUrl: res.imageUrl || '',
           });
+          setProject(res)
 
     })
     .catch(err=>console.log(err))
@@ -33,20 +34,26 @@ const EditProject = () => {
   },[projectId, form])
 
 
+
   const onFinish = async (values) => {
-    console.log(values)
-    // try {
+    console.log(project)
+
+
+
+    try {
+
+        editProject(project._id,user.accessToken,values)
       
     
 
-    //   navigate('/projects')
+      navigate(`/projects/${project._id}`)
 
 
-    // } catch (error) {
+    } catch (error) {
 
-    //   toast.error(error.message)
+      toast.error(error.message)
       
-    // }
+    }
   };
 
   return (

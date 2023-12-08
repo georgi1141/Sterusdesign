@@ -68,3 +68,29 @@ export const addProject = async (data, token) => {
     return error;
   }
 };
+
+
+export const editProject = async (projectId,token,data)=>{
+
+  try {
+    const res = await fetch(`${baseUrl}/${projectId}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        "X-Authorization": token,
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      throw new Error("Internal server error!");
+    }
+
+    const result = res.json();
+    return result;
+  } catch (error) {
+    return error;
+  }
+
+
+}
